@@ -1,15 +1,80 @@
 ---
+import ScaleCalculator from "../components/ScaleCalculator.svelte"
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Let's configure an LED processor</h1>
+    <p>
+      So, you've got a screen that's a different size from the content you're sending it, eh? If
+      you're going through an LED processor, you'll need to tell it which part of the input signal
+      needs to go to the screen. I've done that math so many times, I've gotten sick of it and made
+      this tool to figure it out.
+    </p>
+    <ScaleCalculator client:load />
+  </body>
 </html>
+
+<style>
+  :root {
+    --color-dark: hsl(0, 0%, 12%);
+    --color-light: hsl(0, 0%, 97%);
+    --color-primary: #00b0f0;
+    --size-step-0: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
+    --size-step-1: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.5rem);
+    --size-step-2: clamp(1.56rem, calc(1.41rem + 0.76vw), 2rem);
+    --size-step-3: clamp(1.95rem, calc(1.71rem + 1.24vw), 2.66rem);
+    --size-step-4: clamp(2.44rem, calc(2.05rem + 1.93vw), 3.55rem);
+  }
+
+  body {
+    padding: 2rem;
+
+    max-width: 65ch;
+    margin-inline: auto;
+
+    background-color: var(--color-light);
+    color: var(--color-dark);
+
+    font-family: "Inter", sans-serif;
+    font-size: var(--size-step-0);
+    line-height: 1.6;
+  }
+
+  body > * {
+    max-width: 65ch;
+  }
+
+  body > *:has(+ *) {
+    margin-block-end: 2rem;
+  }
+
+  h1 {
+    font-size: var(--size-step-4);
+    max-width: 20ch;
+    font-weight: 800;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  a {
+    color: currentColor;
+    text-decoration-color: var(--color-primary);
+    text-decoration-thickness: 0.3ex;
+    text-underline-offset: 0.3ex;
+  }
+</style>
