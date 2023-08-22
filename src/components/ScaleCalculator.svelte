@@ -14,7 +14,7 @@
     }
   } else {
     scaled_size = {
-      w: output_size.w / screen_size.ar,
+      w: Math.ceil(output_size.w / screen_size.ar),
       h: output_size.h,
       ar: 1,
     }
