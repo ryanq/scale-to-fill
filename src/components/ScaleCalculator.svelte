@@ -46,8 +46,8 @@
   <p>AR<sub>scaled</sub>* = {scaled_size.w} / {scaled_size.h} = {scaled_size.ar.toLocaleString(undefined, { maximumFractionDigits: 3 })}</p>
   <p>
     <small>
-      * Height is rounded to the pixel value, so the scaled aspect ratio will sometimes be a
-      little smaller than the screen's true aspect ratio.
+      * Scaled values are rounded to even pixel values, so the scaled aspect ratio will sometimes be
+      a little different than the screen's true aspect ratio.
     </small>
   </p>
 </div>
