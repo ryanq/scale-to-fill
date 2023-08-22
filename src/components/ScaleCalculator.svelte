@@ -1,6 +1,6 @@
 <script lang="ts">
   let output_size = { w: 1920, h: 1080, ar: 1 }
-  let screen_size = { w: 1024, h: 768, ar: 1 }
+  let screen_size = { w: 1920, h: 1080, ar: 1 }
   let scaled_size = { w: 1, h: 1, ar: 1 }
   
   $: output_size.ar = output_size.w / output_size.h
